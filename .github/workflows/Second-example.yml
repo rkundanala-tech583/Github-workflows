@@ -1,6 +1,6 @@
 name: my second workflow
 
-on: push
+on: [push]
 
 jobs:
   first_job:
@@ -12,5 +12,5 @@ jobs:
        - name: list files
          run: ls -la
 
-       - name: Build Application
-         run: echo "Build application"
+       - name: Read the file
+         run: cat README.MD
