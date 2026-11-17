@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello! My Python application is running inside Docker."
+    return "Hello! Python application deployed using GitHub Actions and Argo CD."
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+@app.route("/healthz")
+def health():
+    return {"status": "healthy"}, 200
