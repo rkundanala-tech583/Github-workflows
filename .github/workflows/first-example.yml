@@ -9,6 +9,9 @@ jobs:
             - name: Welcome message
               run: echo "My first Github actions workflow"
 
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
             - name: List files
               run: ls
 
