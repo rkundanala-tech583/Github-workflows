@@ -7,7 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Welcome message
-              run: echo "My first Github actions workflow"
+              run: |
+                echo "My first Github actions workflow"
+                sleep 30
 
     second_job:
         runs-on: ubuntu-latest
