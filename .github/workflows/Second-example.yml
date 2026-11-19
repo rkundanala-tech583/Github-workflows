@@ -10,7 +10,6 @@ jobs:
          uses: actions/checkout@v7
 
        - name: list files
-         run: ls -la
-
-       - name: Read the file
-         run: cat README.md
+         run: | 
+          ls -la
+          cat README.md
