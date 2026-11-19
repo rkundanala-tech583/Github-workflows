@@ -8,18 +8,23 @@ jobs:
         steps:
             - name: Welcome message
               run: |
-                echo "My first Github actions workflow"
+                echo mytestrk.txt > My first Github actions workflow
                 sleep 30
+                
+            - uses: actions/upload-artifact@v7
+              with:
+                name: my-artifact
+                path: mytestrk.txt
 
     second_job:
         runs-on: ubuntu-latest
         needs: first_job
         steps:
-            - name: List files
-              run: ls
+          - uses: actions/download-artifact@v8
+            with:
+              name: my-artifact
+          - name: Display structure of downloaded files
+            run: ls -R
 
-            - name: create file
-              run: touch README.md
-
-            - name: read file
-              run: cat README.md
+          - name: read file
+            run: cat mytestrk.txt
